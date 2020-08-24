@@ -4,6 +4,7 @@ const User = require('../models/userModel')
 const authenticate = require('../config/authenticate')
 const multer = require('multer')
 const path = require('path')
+const { cors, corsWithOptions } = require('../config/cors')
 
 const uploadRouter = express.Router()
 uploadRouter.use(bodyParser.json())
@@ -27,7 +28,16 @@ const imageFileFilter = (req, file, callback) => {
 const upload = multer({storage : storage, fileFilter : imageFileFilter})
 
 uploadRouter.route('/')
-.post(authenticate.verifyUser, upload.single('imageFile'), (req, res) => {
+.options(corsWithOptions, (req, res) => {
+    res.sendStatus = 200
+})
+.get(corsWithOptions, authenticate.verifyUser, (req, res) => {
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'application/json')
+    res.json({success : true, msg : 'Badhai ho! Get request working!'})
+})
+
+.post(corsWithOptions, authenticate.verifyUser, upload.single('imageFile'), (req, res) => {
     User.findById(req.user._id)
     .then(user => {
         console.log('file destination : ', req.file.destination)
