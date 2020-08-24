@@ -1,0 +1,60 @@
+.Container {
+  width: 700px;
+  height: 400px;
+  background-color: white;
+  -webkit-box-shadow: -20px 20px 60px #d8d2d8,  20px -20px 60px #ffffff;
+          box-shadow: -20px 20px 60px #d8d2d8,  20px -20px 60px #ffffff;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container .Picture {
+  width: 200px;
+  height: 200px;
+  margin-top: 30px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.Container .Picture img {
+  height: 100%;
+}
+
+.Container .Username {
+  margin-top: 30px;
+  color: grey;
+  font-size: 1.5rem;
+}
+
+.Container .Username .Highlite {
+  font-size: 1.5rem;
+  color: #1fa5bd;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.Container .Name {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+/*# sourceMappingURL=ProfileCard.module.css.map */

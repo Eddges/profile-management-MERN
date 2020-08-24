@@ -1,0 +1,41 @@
+.Container{
+    width : 700px;;
+    height : 400px;
+    background-color : white;
+    box-shadow:  -20px 20px 60px #d8d2d8, 
+             20px -20px 60px #ffffff;
+    border-radius : 20px;
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    .Title{
+        font-size : 2.5rem;
+        margin-top : 30px;
+        color : rgb(56, 116, 195);
+        font-weight : 600;
+    }
+    input{
+        width : 250px;
+        height : 50px;
+        margin-top : 20px;
+        padding-left : 20px;
+        background-color : white;
+        border : solid 1px rgb(56, 116, 195);
+        border-radius : 5px;
+        color : rgb(56, 116, 195);
+    }
+    .Submit{
+        width : 120px;
+        height : 50px;
+        background-color : rgb(56, 116, 195);
+        color : white;
+        border : none;
+        border-radius : 5px;
+        margin-top : 20px;
+        transition : all 0.2s;
+        &:hover{
+            background-color : rgb(23, 97, 194);
+            cursor : pointer;
+        }
+    }
+}

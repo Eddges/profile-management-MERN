@@ -34,10 +34,11 @@ uploadRouter.route('/')
 .get(corsWithOptions, authenticate.verifyUser, (req, res) => {
     res.statusCode = 200
     res.setHeader('Content-Type', 'application/json')
-    res.json({success : true, msg : 'Badhai ho! Get request working!'})
+    res.json({success : true, user : req.user})
 })
 
 .post(corsWithOptions, authenticate.verifyUser, upload.single('imageFile'), (req, res) => {
+    console.log(req.body)
     User.findById(req.user._id)
     .then(user => {
         console.log('file destination : ', req.file.destination)
@@ -47,7 +48,7 @@ uploadRouter.route('/')
         .then(doc => {
             res.statusCode = 200
             res.setHeader('Content-Type', 'application/json')
-            res.json({user : user, file : req.file})
+            res.json({user : user, file : req.file, success : true})
         })
     })
 })
